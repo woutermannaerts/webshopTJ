@@ -20,32 +20,20 @@ import javax.persistence.TypedQuery;
 
 @Stateless
 public class ProductDAO {
-    
+
     @PersistenceContext(unitName = "WebshopTJ-ejbPU")
     private EntityManager em;
 
-    
-    
     public ProductDAO() {
     }
 
-    
-    
-    public List<ProductTJ> getProductLijst() {
-        TypedQuery<ProductTJ> query;
-
-        query = em.createQuery("SELECT p FROM ProductTJ p", ProductTJ.class);
-
-        List<ProductTJ> results = query.getResultList();
-        return results;
-    }
-    
-    public List<ProductTJ> findAllProducts()
-    {
+    public List<ProductTJ> findAllProducts() {
         TypedQuery<ProductTJ> tq = em.createNamedQuery("ProductTJ.findAll", ProductTJ.class);
-        
+
         List<ProductTJ> resultaten = tq.getResultList();
-        
+
         return resultaten;
     }
+    
+    
 }

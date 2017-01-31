@@ -37,5 +37,6 @@ public class CataBean implements Serializable {
     {
         return sDAO.findAllProducts();
     }
-
+    
+    
 }

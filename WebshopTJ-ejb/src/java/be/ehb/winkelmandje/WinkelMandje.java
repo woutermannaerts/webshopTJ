@@ -7,13 +7,19 @@ package be.ehb.winkelmandje;
 
 import be.ehb.entities.ProductTJ;
 import java.util.ArrayList;
+import java.util.List;
+import javax.enterprise.context.RequestScoped;
+import javax.inject.Named;
 
 /**
  *
  * @author mobapp02
  */
+
+@Named @RequestScoped
 public class WinkelMandje {
     
+
     private ArrayList<ProductTJ> winkelmandje;
 
     public WinkelMandje(ArrayList<ProductTJ> winkelmandje) {
@@ -24,12 +30,12 @@ public class WinkelMandje {
         return winkelmandje;
     }
 
-    public ProductTJ voegProductToe(ProductTJ p){
+    public ProductTJ voegProductToe(ProductTJ p) {
         return p;
     }
-    
-    public ProductTJ verwijderProduct(ProductTJ p){
+
+    public ProductTJ verwijderProduct(ProductTJ p) {
         return p;
     }
-    
+
 }

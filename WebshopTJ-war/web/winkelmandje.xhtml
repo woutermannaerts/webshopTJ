@@ -1,22 +1,73 @@
 <?xml version='1.0' encoding='UTF-8' ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:h="http://xmlns.jcp.org/jsf/html">
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
     <h:head>
         <title>Winkelmandje</title>
     </h:head>
     <h:body>
-        Welkom in je winkelmandje
+        <h1>Welkom in je winkelmandje</h1>
         
-        <h:button outcome="index" value="index"></h:button>
+        
+        <button><a href="index.xhtml">home</a></button>
         <h:button outcome="catalogus" value="catalogus"></h:button>
-        <h:button outcome="winkelmandje" value="winkelmandje"></h:button>
-        <h:button outcome="inlog" value="inlog"></h:button>
+        <button><a href="winkelmandje.xhtml">Winkelmandje</a></button>
+        <button><a href="inlog.xhtml">Log in/Registreer</a></button>
         
-        <button>Voegtoe</button>
-        <button>Verwijder</button>
+        
        
-        
+        <h:dataTable value="${VMBean.showProducts()}" var="item">
+                    <h:column>
+                        <f:facet name="header">
+                            <h:outputText value="Id"/>
+                        </f:facet>
+                        <h:outputText value="${item.id}"/>
+                    </h:column>
+                    <h:column>
+                        <f:facet name="header">
+                            <h:outputText value="Naam"/>
+                        </f:facet>
+                        <h:outputText value="${item.naam}"/>
+                    </h:column>
+                    <h:column>
+                        <f:facet name="header">
+                            <h:outputText value="Categorie"/>
+                        </f:facet>
+                        <h:outputText value="${item.categorie}"/>
+                    </h:column>
+                    <h:column>
+                        <f:facet name="header">
+                            <h:outputText value="Prijs"/>
+                        </f:facet>
+                        <h:outputText value="${item.prijs}"/>
+                    </h:column>
+                    <h:column>
+                        <f:facet name="header">
+                            <h:outputText value="n"/>
+                        </f:facet>
+                        <h:outputText value=""/>
+                    </h:column>
+                    <h:column>
+                        <f:facet name="header">
+                            
+                        </f:facet>
+                        <h:button outcome="winkelmandje" value="+"></h:button>
+                    </h:column>
+                    <h:column>
+                        <f:facet name="header">
+                            
+                        </f:facet>
+                        <h:button outcome="winkelmandje" value="-"></h:button>
+                    </h:column>
+                    <h:column>
+                        <f:facet name="header">
+                            
+                        </f:facet>
+                        <h:button outcome="winkelmandje" value="x"></h:button>
+                    </h:column>
+            
+                </h:dataTable>
         
     </h:body>
 </html>
