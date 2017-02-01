@@ -5,12 +5,12 @@
  */
 package be.ehb.sessionbeans;
 
-import be.ehb.dao.ProductDAO;
+import be.ehb.controllers.ProductDAO;
 import be.ehb.entities.ProductTJ;
 import java.io.Serializable;
 import java.util.List;
 import javax.ejb.EJB;
-import javax.enterprise.context.SessionScoped;
+import javax.enterprise.context.RequestScoped;
 import javax.inject.Named;
 
 /**
@@ -18,15 +18,14 @@ import javax.inject.Named;
  * @author mobapp02
  */
 
-
+@RequestScoped
 @Named("VMBean")
-@SessionScoped
-public class CataBean implements Serializable {
+public class ViewManagerBean implements Serializable {
 
     @EJB
     private ProductDAO sDAO;
 
-    public CataBean() {
+    public ViewManagerBean() {
     }
 
     public ProductDAO getsDAO() {

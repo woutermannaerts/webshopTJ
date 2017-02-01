@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package be.ehb.dao;
+package be.ehb.controllers;
 
 import be.ehb.entities.ProductTJ;
 import java.util.List;

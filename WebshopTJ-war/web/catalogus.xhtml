@@ -8,48 +8,44 @@
     </h:head>
     <h:body>
         <h1>Catalogus</h1>
-        
+
         <button><a href="index.xhtml">home</a></button>
         <h:button outcome="catalogus" value="catalogus"></h:button>
         <button><a href="winkelmandje.xhtml">Winkelmandje</a></button>
         <button><a href="inlog.xhtml">Log in/Registreer</a></button>
 
-
-           
-                <h:dataTable value="${VMBean.showProducts()}" var="item">
-                    <h:column>
-                        <f:facet name="header">
-                            <h:outputText value="Id"/>
-                        </f:facet>
-                        <h:outputText value="${item.id}"/>
-                    </h:column>
-                    <h:column>
-                        <f:facet name="header">
-                            <h:outputText value="Naam"/>
-                        </f:facet>
-                        <h:outputText value="${item.naam}"/>
-                    </h:column>
-                    <h:column>
-                        <f:facet name="header">
-                            <h:outputText value="Categorie"/>
-                        </f:facet>
-                        <h:outputText value="${item.categorie}"/>
-                    </h:column>
-                    <h:column>
-                        <f:facet name="header">
-                            <h:outputText value="Prijs"/>
-                        </f:facet>
-                        <h:outputText value="${item.prijs}"/>
-                    </h:column>
-                    <h:column>
-                        <f:facet name="header">
-                            <h:outputText value="Toevoegen aan winkelmandje"/>
-                        </f:facet>
-                        <h:button outcome="catalogus" value="+"></h:button>
-                        
-                    </h:column>
-                </h:dataTable>
-        
+        <h:dataTable value="${VMBean.showProducts()}" var="item">
+            <h:column>
+                <f:facet name="header">
+                    <h:outputText value="Id"/>
+                </f:facet>
+                <h:outputText value="${item.id}"/>
+            </h:column>
+            <h:column>
+                <f:facet name="header">
+                    <h:outputText value="Naam"/>
+                </f:facet>
+                <h:outputText value="${item.naam}"/>
+            </h:column>
+            <h:column>
+                <f:facet name="header">
+                    <h:outputText value="Categorie"/>
+                </f:facet>
+                <h:outputText value="${item.categorie}"/>
+            </h:column>
+            <h:column>
+                <f:facet name="header">
+                    <h:outputText value="Prijs"/>
+                </f:facet>
+                <h:outputText value="${item.prijs}"/>
+            </h:column>
+            <h:column>
+                <f:facet name="header">
+                    <h:outputText value="Toevoegen aan winkelmandje"/>
+                </f:facet>
+                <h:button outcome="catalogus" value="${WMBean.addProductTJ(id)}" ></h:button>
+            </h:column>
+        </h:dataTable>
     </h:body>
 </html>
 
