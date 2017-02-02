@@ -5,13 +5,17 @@
       xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
 
     <h:head>
-        <title>Catalogus</title>
+
     </h:head>
 
     <h:body>
         <ui:composition template="./resources/templates/Template.xhtml">
+            <ui:define name="title">
+                Catalogus
+            </ui:define>
+
             <ui:define name="content">
-                <h1>catalogus</h1>
+                <h1>Welkom in je catalogus</h1>
             </ui:define>
         </ui:composition>
     </h:body>
