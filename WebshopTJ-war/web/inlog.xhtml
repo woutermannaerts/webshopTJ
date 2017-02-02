@@ -19,21 +19,21 @@
                 <br/>
                 <h:form>
                     Naam:
-                    <h:inputText value="${userBean.voorNaam}"></h:inputText>
+                    <h:inputText value="${naam}"></h:inputText>
                     <br/>
                     Adres:
-                    <h:inputText value="${userBean.adres}"></h:inputText>
+                    <h:inputText value="${adres}"></h:inputText>
                     <br/>
                     Telefoonnummer:
-                    <h:inputText value="${userBean.telefoonnummer}"></h:inputText>
+                    <h:inputText value="${telefoonnummer}"></h:inputText>
                     <br/>
                     E-mail:
-                    <h:inputText value="${userBean.email}"></h:inputText>
+                    <h:inputText value="${email}"></h:inputText>
                     <br/>
-                    Kredietkaart:
-                    <h:inputText value="${userBean.kredietkaart}"></h:inputText>
+                    Creditcard:
+                    <h:inputText value="${creditcard}"></h:inputText>
                     <br/>
-                    <h:commandButton value="send"/>
+                    <h:commandButton action="${UBean.saveAndGoHome(id, naam, adres, telefoonnummer, email, creditcard)}" value="Sla Op"/>
                 </h:form>
             </ui:define>
         </ui:composition>

@@ -22,7 +22,7 @@ import javax.xml.bind.annotation.XmlRootElement;
 
 /**
  *
- * @author mobapp03
+ * @author mobapp02
  */
 @Entity
 @Table(name = "Users")
@@ -52,8 +52,10 @@ public class Users implements Serializable {
     @Size(min = 1, max = 65535)
     @Column(name = "adres")
     private String adres;
+    @Basic(optional = false)
+    @NotNull
     @Column(name = "telefoonnummer")
-    private Integer telefoonnummer;
+    private int telefoonnummer;
     // @Pattern(regexp="[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?", message="Invalid email")//if the field contains email address consider using this annotation to enforce field validation
     @Basic(optional = false)
     @NotNull
@@ -73,10 +75,11 @@ public class Users implements Serializable {
         this.id = id;
     }
 
-    public Users(Integer id, String naam, String adres, String email, int creditcard) {
+    public Users(Integer id, String naam, String adres, int telefoonnummer, String email, int creditcard) {
         this.id = id;
         this.naam = naam;
         this.adres = adres;
+        this.telefoonnummer = telefoonnummer;
         this.email = email;
         this.creditcard = creditcard;
     }
@@ -105,11 +108,11 @@ public class Users implements Serializable {
         this.adres = adres;
     }
 
-    public Integer getTelefoonnummer() {
+    public int getTelefoonnummer() {
         return telefoonnummer;
     }
 
-    public void setTelefoonnummer(Integer telefoonnummer) {
+    public void setTelefoonnummer(int telefoonnummer) {
         this.telefoonnummer = telefoonnummer;
     }
 
