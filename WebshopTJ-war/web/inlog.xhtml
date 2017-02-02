@@ -5,12 +5,18 @@
       xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
 
     <h:head>
-        <title>Log in</title>
+
     </h:head>
 
     <h:body>
         <ui:composition template="./resources/templates/Template.xhtml">
+            <ui:define name="title">
+                Log in
+            </ui:define>
+
             <ui:define name="content">
+                <h1>Welkom op de Log in pagina</h1>
+                <br/>
                 <h:form>
                     Naam:
                     <h:inputText value="${userBean.voorNaam}"></h:inputText>

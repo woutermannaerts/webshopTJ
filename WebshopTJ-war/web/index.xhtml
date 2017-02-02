@@ -3,14 +3,19 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:h="http://xmlns.jcp.org/jsf/html"
       xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+   
     <h:head>
-        <title>Home Page</title>
+
     </h:head>
 
     <h:body>
         <ui:composition template="./resources/templates/Template.xhtml">
+            <ui:define name="title">
+                Home
+            </ui:define>
+
             <ui:define name="content">
-                <h1>This is my index content</h1>
+                <h1>Welkom op de hoofdpagina</h1>
             </ui:define>
         </ui:composition>
     </h:body>

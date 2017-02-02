@@ -5,11 +5,15 @@
       xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
 
     <h:head>
-        <title>Winkelmandje</title>
+
     </h:head>
 
     <h:body>
         <ui:composition template="./resources/templates/Template.xhtml">
+            <ui:define name="title">
+                Winkelmandje
+            </ui:define>
+
             <ui:define name="content">
                 <h1>Welkom in je winkelmandje</h1>
             </ui:define>
