@@ -8,9 +8,11 @@ package be.ehb.winkelmandje;
 
 import be.ehb.entities.ProductTJ;
 import java.util.ArrayList;
+import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.annotation.Resource;
 import javax.ejb.LocalBean;
+import javax.ejb.Stateful;
 import javax.ejb.Stateless;
 import javax.faces.validator.Validator;
 import javax.persistence.EntityManager;
@@ -22,21 +24,22 @@ import javax.persistence.PersistenceContext;
  *            
  */
 
-@Stateless
-@LocalBean
+@Stateful
 public class WinkelMandjeSource {
 
     @PersistenceContext(unitName = "WebshopTJ-ejbPU")
     private EntityManager em;
 
     private ArrayList<ProductTJ> winkelLijst;
+    private static final Logger LOG = Logger.getLogger(WinkelMandjeSource.class.getName());
 
+    
+    
     public WinkelMandjeSource() {
+        winkelLijst = new ArrayList<>();
     }
 
     public ArrayList<ProductTJ> getWinkelLijst() {
-        winkelLijst = new ArrayList<>();
-
         return winkelLijst;
     }
     
@@ -46,8 +49,11 @@ public class WinkelMandjeSource {
     }
     
     public void addProductTJ(int siD){
-        ProductTJ productTJToBeAdded = em.getReference(ProductTJ.class, siD);
-        em.persist(productTJToBeAdded);
+        ProductTJ productTJToBeAdded = em.find(ProductTJ.class, siD);
+       
+        LOG.log(Level.SEVERE, productTJToBeAdded.toString());
+        
+        winkelLijst.add(productTJToBeAdded);
     }
     
     

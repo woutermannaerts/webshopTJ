@@ -12,6 +12,7 @@ import java.io.Serializable;
 import java.util.ArrayList;
 import javax.ejb.EJB;
 import javax.enterprise.context.RequestScoped;
+import javax.enterprise.context.SessionScoped;
 import javax.inject.Named;
 
 /**
@@ -20,7 +21,7 @@ import javax.inject.Named;
  *
  */
 @Named("WMBean")
-@RequestScoped
+@SessionScoped
 public class WinkelBean implements Serializable {
 
     @EJB
@@ -37,9 +38,8 @@ public class WinkelBean implements Serializable {
         return winkelMandjeSource.getWinkelLijst();
     }
 
-    public String addProductTJ(int id) {
+    public void addProductTJ(int id) {
         winkelMandjeSource.addProductTJ(id);
-        return "winkelmandje.xhtml";
     }
 
     public String removeProductTJ(int id) {
