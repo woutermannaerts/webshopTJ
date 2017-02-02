@@ -126,5 +126,9 @@ public class ProductTJ implements Serializable {
     public String toString() {
         return "be.ehb.entities.ProductTJ[ id=" + id + " ]";
     }
+
+    public void incrementQuantity() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
     
 }
