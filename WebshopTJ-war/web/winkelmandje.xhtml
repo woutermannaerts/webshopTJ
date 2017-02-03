@@ -18,7 +18,10 @@
 
             <ui:define name="content">
                 <h:form>
-                    <h:dataTable value="${WMBean.data}" var="item">
+                    <h:dataTable value="${WMBean.data}" var="item"
+                                 styleClass="employeeTable"
+                                 headerClass="employeeTableHeader"
+                                 rowClasses="employeeTableOddRow,employeeTableEvenRow">
                         <h:column>
                             <f:facet name="header">
                                 <h:outputText value="Id"/>

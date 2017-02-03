@@ -7,10 +7,12 @@
 
     <h:head>
 
+         	
     </h:head>
 
     <h:body>
         <ui:composition template="./resources/templates/Template.xhtml">
+            
             <ui:define name="title">
                 Home
             </ui:define>
@@ -24,12 +26,15 @@
                     <h:commandButton action="${VMBean.toonPagina('Paarden')}" value="Paarden"></h:commandButton>
                     <h:commandButton action="${VMBean.toonPagina('Poezen')}" value="Poezen"></h:commandButton>
 
-                    <h:dataTable value="${VMBean.toonCategorie(VMBean.gekozen)}" var="item">
+                    <h:dataTable value="${VMBean.toonCategorie(VMBean.gekozen)}" var="item"
+                                 styleClass="employeeTable"
+                                 headerClass="employeeTableHeader"
+                                 rowClasses="employeeTableOddRow,employeeTableEvenRow">
                         <h:column>
                             <f:facet name="header">
                                 <h:outputText value="Id"/>
                             </f:facet>
-                            <h:outputText value="${item.id}"/>
+                            <h:outputText value="${item.id}" />
                         </h:column>
                         <h:column>
                             <f:facet name="header">
