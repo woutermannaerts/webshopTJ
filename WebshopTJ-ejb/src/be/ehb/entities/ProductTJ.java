@@ -28,8 +28,10 @@ import javax.xml.bind.annotation.XmlRootElement;
 @Table(name = "productTJ")
 @XmlRootElement
 @NamedQueries({
-    @NamedQuery(name = "ProductTJ.findAll", query = "SELECT p FROM ProductTJ p"),
-    @NamedQuery(name = "ProductTJ.findById", query = "SELECT p FROM ProductTJ p WHERE p.id = :id"),
+    @NamedQuery(name = "ProductTJ.findAll", query = "SELECT p FROM ProductTJ p")
+    ,
+    @NamedQuery(name = "ProductTJ.findById", query = "SELECT p FROM ProductTJ p WHERE p.id = :id")
+    ,
     @NamedQuery(name = "ProductTJ.findByPrijs", query = "SELECT p FROM ProductTJ p WHERE p.prijs = :prijs")})
 public class ProductTJ implements Serializable {
 
@@ -130,5 +132,5 @@ public class ProductTJ implements Serializable {
     public void incrementQuantity() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
-    
+
 }

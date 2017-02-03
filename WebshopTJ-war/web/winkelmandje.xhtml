@@ -17,56 +17,58 @@
 
 
             <ui:define name="content">
-                <h:dataTable value="${WMBean.data}" var="item">
-                    <h:column>
-                        <f:facet name="header">
-                            <h:outputText value="Id"/>
-                        </f:facet>
-                        <h:outputText value="${item.id}"/>
-                    </h:column>
-                    <h:column>
-                        <f:facet name="header">
-                            <h:outputText value="Naam"/>
-                        </f:facet>
-                        <h:outputText value="${item.naam}"/>
-                    </h:column>
-                    <h:column>
-                        <f:facet name="header">
-                            <h:outputText value="Categorie"/>
-                        </f:facet>
-                        <h:outputText value="${item.categorie}"/>
-                    </h:column>
-                    <h:column>
-                        <f:facet name="header">
-                            <h:outputText value="Prijs"/>
-                        </f:facet>
-                        <h:outputText value="${item.prijs}"/>
-                    </h:column>
-                    <h:column>
-                        <f:facet name="header">
-                            <h:outputText value="n"/>
-                        </f:facet>
-                        <h:outputText value=""/>
-                    </h:column>
-                    <h:column>
-                        <f:facet name="header">
+                <h:form>
+                    <h:dataTable value="${WMBean.data}" var="item">
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="Id"/>
+                            </f:facet>
+                            <h:outputText value="${item.id}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="Naam"/>
+                            </f:facet>
+                            <h:outputText value="${item.naam}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="Categorie"/>
+                            </f:facet>
+                            <h:outputText value="${item.categorie}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="Prijs"/>
+                            </f:facet>
+                            <h:outputText value="${item.prijs}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="n"/>
+                            </f:facet>
+                            <h:outputText value=""/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
 
-                        </f:facet>
-                        <h:button outcome="winkelmandje" value="${WMBean.nToevoegen(i)}"></h:button>
-                    </h:column>
-                    <h:column>
-                        <f:facet name="header">
+                            </f:facet>
+                            <h:commandButton action="${WMBean.nToevoegen(item.id)}" value="+"></h:commandButton>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
 
-                        </f:facet>
-                        <h:button outcome="winkelmandje" value="${WMBean.nVerwijderen(i)}"></h:button>
-                    </h:column>
-                    <h:column>
-                        <f:facet name="header">
+                            </f:facet>
+                            <h:commandButton action="${WMBean.nVerwijderen(item.id)}" value="-"></h:commandButton>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
 
-                        </f:facet>
-                        <h:button outcome="winkelmandje" value="${WMBean.removeProductTJ(id)}"></h:button>
-                    </h:column>
-                </h:dataTable>
+                            </f:facet>
+                            <h:commandButton action="${WMBean.removeProductTJ(item.id)}" value="x"></h:commandButton>
+                        </h:column>
+                    </h:dataTable>
+                </h:form>
             </ui:define>    
         </ui:composition>
 

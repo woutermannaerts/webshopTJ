@@ -8,7 +8,6 @@ package be.ehb.controllers;
 import be.ehb.entities.ProductTJ;
 import java.util.List;
 import javax.ejb.Stateless;
-
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.persistence.TypedQuery;
@@ -17,7 +16,6 @@ import javax.persistence.TypedQuery;
  *
  * @author mobapp02
  */
-
 @Stateless
 public class ProductDAO {
 
@@ -34,6 +32,5 @@ public class ProductDAO {
 
         return resultaten;
     }
-    
-    
+
 }

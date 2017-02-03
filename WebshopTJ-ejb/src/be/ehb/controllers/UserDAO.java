@@ -6,7 +6,6 @@
 package be.ehb.controllers;
 
 import be.ehb.entities.Users;
-import java.util.List;
 import java.util.Set;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -21,25 +20,23 @@ import javax.validation.Validator;
  *
  * @author mobapp02
  */
-
 @Stateful
 public class UserDAO {
-    
+
     @PersistenceContext(unitName = "WebshopTJ-ejbPU")
     private EntityManager em;
-    
+
     @Resource
     Validator validator;
-    
+
     private static final Logger LOG = Logger.getLogger(UserDAO.class.getName());
-    
+
     private int lastSelectedID;
 
     public UserDAO() {
     }
-    
-    public boolean createUser(int id, String naam, String adres, int telefoonnummer, String email, int creditcard)
-    {
+
+    public boolean createUser(int id, String naam, String adres, int telefoonnummer, String email, int creditcard) {
         Users s = new Users(id, naam, adres, telefoonnummer, email, creditcard);
         em.persist(s);
 
@@ -59,9 +56,4 @@ public class UserDAO {
         return false;
     }
 
-
-    
-    
-     
-    
 }

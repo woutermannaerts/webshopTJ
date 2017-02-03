@@ -17,7 +17,6 @@ import javax.inject.Named;
  *
  * @author mobapp02
  */
-
 @RequestScoped
 @Named("VMBean")
 public class ViewManagerBean implements Serializable {
@@ -31,11 +30,9 @@ public class ViewManagerBean implements Serializable {
     public ProductDAO getsDAO() {
         return sDAO;
     }
-    
-    public List<ProductTJ> showProducts()
-    {
+
+    public List<ProductTJ> showProducts() {
         return sDAO.findAllProducts();
     }
-    
-    
+
 }

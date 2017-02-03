@@ -9,7 +9,6 @@ import be.ehb.controllers.UserDAO;
 import java.io.Serializable;
 import javax.ejb.EJB;
 import javax.enterprise.context.RequestScoped;
-import javax.enterprise.context.SessionScoped;
 import javax.inject.Named;
 
 /**
@@ -18,31 +17,28 @@ import javax.inject.Named;
  */
 @Named("UBean")
 @RequestScoped
-public class UserBean implements Serializable{
-    
+public class UserBean implements Serializable {
+
     @EJB
     private UserDAO uDAO;
-    
+
     public UserBean() {
     }
 
     public UserDAO getsDAO() {
         return uDAO;
     }
-    
-    public String saveAndGoHome(int id, String naam, String adres, int telefoonnummer, String email, int creditcard)
-    {
-        if(uDAO.createUser(id, naam, adres, telefoonnummer, email, creditcard))
+
+    public String saveAndGoHome(int id, String naam, String adres, int telefoonnummer, String email, int creditcard) {
+        if (uDAO.createUser(id, naam, adres, telefoonnummer, email, creditcard)) {
             return "inlog.xhtml";
-        else
+        } else {
             return "inlog.xhtml";
+        }
     }
 
-    public String goNewUser()
-    {
+    public String goNewUser() {
         return "winkelmandje.xhtml";
     }
-    
-    
-    
+
 }
