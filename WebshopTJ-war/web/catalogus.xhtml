@@ -9,47 +9,47 @@
     </h:head>
 
     <h:body>
- <ui:composition template="./resources/templates/Template.xhtml">
+        <ui:composition template="./resources/templates/Template.xhtml">
             <ui:define name="title">
-                Home
+                Catalogus
             </ui:define>
-      <ui:define name="content">
-          <h:form>
-        <h:dataTable value="${VMBean.showProducts()}" var="item">
-            <h:column>
-                <f:facet name="header">
-                    <h:outputText value="Id"/>
-                </f:facet>
-                <h:outputText value="${item.id}"/>
-            </h:column>
-            <h:column>
-                <f:facet name="header">
-                    <h:outputText value="Naam"/>
-                </f:facet>
-                <h:outputText value="${item.naam}"/>
-            </h:column>
-            <h:column>
-                <f:facet name="header">
-                    <h:outputText value="Categorie"/>
-                </f:facet>
-                <h:outputText value="${item.categorie}"/>
-            </h:column>
-            <h:column>
-                <f:facet name="header">
-                    <h:outputText value="Prijs"/>
-                </f:facet>
-                <h:outputText value="${item.prijs}"/>
-            </h:column>
-            <h:column>
-                <f:facet name="header">
-                    <h:outputText value="Toevoegen aan winkelmandje"/>
-                </f:facet>
-                <h:commandButton action="${WMBean.addProductTJ(item.id)}" value="koop" ></h:commandButton>>
-            </h:column>
-        </h:dataTable>
-          </h:form>
-      </ui:define>
- </ui:composition>
+            <ui:define name="content">
+                <h:form>
+                    <h:dataTable value="${VMBean.showProducts()}" var="item">
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="Id"/>
+                            </f:facet>
+                            <h:outputText value="${item.id}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="Naam"/>
+                            </f:facet>
+                            <h:outputText value="${item.naam}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="Categorie"/>
+                            </f:facet>
+                            <h:outputText value="${item.categorie}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="Prijs"/>
+                            </f:facet>
+                            <h:outputText value="${item.prijs}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="Toevoegen aan winkelmandje"/>
+                            </f:facet>
+                            <h:commandButton action="${WMBean.addProductTJ(item.id)}" value="koop" ></h:commandButton>>
+                        </h:column>
+                    </h:dataTable>
+                </h:form>
+            </ui:define>
+        </ui:composition>
     </h:body>
 </html>
 
