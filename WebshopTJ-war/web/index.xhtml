@@ -2,7 +2,8 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:h="http://xmlns.jcp.org/jsf/html"
-      xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
 
     <h:head>
 
@@ -13,9 +14,43 @@
             <ui:define name="title">
                 Home
             </ui:define>
-
             <ui:define name="content">
                 <h1>Welkom op de hoofdpagina</h1>
+                <h:form>
+                    <h:commandButton action="index" value="Alle" ></h:commandButton>
+                    <h:commandButton action="${VMBean.toonPagina('Honden')}" value="Honden"></h:commandButton>
+                    <h:commandButton action="${VMBean.toonPagina('Katten')}" value="Katten"></h:commandButton>
+                    <h:commandButton action="${VMBean.toonPagina('Knaagdieren')}" value="Knaagdieren"></h:commandButton>
+                    <h:commandButton action="${VMBean.toonPagina('Paarden')}" value="Paarden"></h:commandButton>
+                    <h:commandButton action="${VMBean.toonPagina('Poezen')}" value="Poezen"></h:commandButton>
+
+                    <h:dataTable value="${VMBean.toonCategorie(VMBean.gekozen)}" var="item">
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="Id"/>
+                            </f:facet>
+                            <h:outputText value="${item.id}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="Naam"/>
+                            </f:facet>
+                            <h:outputText value="${item.naam}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="Categorie"/>
+                            </f:facet>
+                            <h:outputText value="${item.categorie}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="Prijs"/>
+                            </f:facet>
+                            <h:outputText value="${item.prijs}"/>
+                        </h:column>
+                    </h:dataTable>
+                </h:form>
             </ui:define>
         </ui:composition>
     </h:body>

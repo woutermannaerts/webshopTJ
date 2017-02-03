@@ -23,16 +23,39 @@ public class ViewManagerBean implements Serializable {
 
     @EJB
     private ProductDAO sDAO;
+    
+    String gekozen;
+
+    public String getGekozen() {
+        return gekozen;
+    }
+
+    public void setGekozen(String gekozen) {
+        this.gekozen = gekozen;
+    }
 
     public ViewManagerBean() {
+        gekozen = "all";
     }
 
     public ProductDAO getsDAO() {
         return sDAO;
     }
-
-    public List<ProductTJ> showProducts() {
+    
+    public List<ProductTJ> toonCategorie(String categorie){
+        if(categorie.equals("all"))
         return sDAO.findAllProducts();
+        else
+        return sDAO.toonCategorie(categorie);
+    }
+    
+    public String toonPagina(String gekozen){
+    
+        if(gekozen == null)gekozen = "all";
+        
+        this.gekozen = gekozen;
+        
+        return "index";
     }
 
 }

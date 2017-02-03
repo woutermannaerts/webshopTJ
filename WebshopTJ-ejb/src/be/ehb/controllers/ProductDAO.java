@@ -7,9 +7,11 @@ package be.ehb.controllers;
 
 import be.ehb.entities.ProductTJ;
 import java.util.List;
+import java.util.Locale;
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
+import javax.persistence.Query;
 import javax.persistence.TypedQuery;
 
 /**
@@ -27,10 +29,16 @@ public class ProductDAO {
 
     public List<ProductTJ> findAllProducts() {
         TypedQuery<ProductTJ> tq = em.createNamedQuery("ProductTJ.findAll", ProductTJ.class);
-
         List<ProductTJ> resultaten = tq.getResultList();
-
         return resultaten;
     }
+
+    public List<ProductTJ> toonCategorie(String categorie){
+        TypedQuery<ProductTJ> tq = em.createNamedQuery("ProductTJ.findByCategorie", ProductTJ.class).setParameter("categorie", categorie);
+        List<ProductTJ> resultaten = tq.getResultList();
+        return resultaten;
+    }   
+    
+    
 
 }
